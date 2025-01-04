@@ -53,7 +53,7 @@ export function connect(self: OnTimeInstance, ontime: OntimeV3): void {
 			self.updateStatus(InstanceStatus.ConnectionFailure, 'Unsupported version: see log')
 			self.log(
 				'error',
-				'The version request timed out, this is most likely do to an old ontime version. You can download the latest version of Ontime through the website https://www.getontime.no/'
+				'The version request timed out, this is most likely do to an old ontime version. You can download the latest version of Ontime through the website https://www.getontime.no/',
 			)
 			ws?.close()
 		}, 500)
@@ -109,7 +109,7 @@ export function connect(self: OnTimeInstance, ontime: OntimeV3): void {
 			feedbackId.ColorAddRemove,
 			feedbackId.TimerPhase,
 			feedbackId.TimerProgressBar,
-			feedbackId.TimerProgressBarMulti
+			feedbackId.TimerProgressBarMulti,
 		)
 	}
 
@@ -128,7 +128,7 @@ export function connect(self: OnTimeInstance, ontime: OntimeV3): void {
 			feedbackId.MessageVisible,
 			feedbackId.TimerBlackout,
 			feedbackId.TimerBlink,
-			feedbackId.MessageSecondarySourceVisible
+			feedbackId.MessageSecondarySourceVisible,
 		)
 	}
 
@@ -285,7 +285,7 @@ export function connect(self: OnTimeInstance, ontime: OntimeV3): void {
 						if (Number(version.at(1)) < 6) {
 							self.updateStatus(
 								InstanceStatus.BadConfig,
-								'Ontime version is too old (required >3.6.0) some features are not available'
+								'Ontime version is too old (required >3.6.0) some features are not available',
 							)
 						} else {
 							self.updateStatus(InstanceStatus.Ok, payload)
@@ -303,7 +303,7 @@ export function connect(self: OnTimeInstance, ontime: OntimeV3): void {
 						self.updateStatus(InstanceStatus.ConnectionFailure, 'Unsupported version: see log')
 						self.log(
 							'error',
-							`Unsupported version "${payload}" You can download the latest version of Ontime through the website https://www.getontime.no/`
+							`Unsupported version "${payload}" You can download the latest version of Ontime through the website https://www.getontime.no/`,
 						)
 						ws?.close()
 					}
@@ -344,7 +344,7 @@ export function socketSendJson(type: string, payload?: InputValue | object): voi
 			JSON.stringify({
 				type,
 				payload,
-			})
+			}),
 		)
 	}
 }
