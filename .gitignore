@@ -5,7 +5,7 @@ package-lock.json
 
 .idea
 .yarn
-.yarnrc.yml
 /pkg
 /pkg.tgz
 DEBUG-PACKAGED
+.yarnrc.yml
